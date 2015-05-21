@@ -6,3 +6,7 @@
 * :og tags
 * robots
 * Google Analytics
+
+
+## License
+[![WTFPL](wtfpl-badge.png "WTFPL")](https://github.com/zergiocosta/SC-Simple-SEO/blob/master/LICENSE)

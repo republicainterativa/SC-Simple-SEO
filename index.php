@@ -123,7 +123,7 @@ function inserthead() {
         $posttags = get_the_tags($post->ID);
     ?>
 
-    <?php if ($options['scseo_author']) 		{ ?> <link type="text/plain" rel="author" href="<?php echo $options['scseo_author']; ?>" /> <?php } ?>
+    <?php if ($options['scseo_author']) 		{ ?> <meta name="author" content="<?php echo $options['scseo_author']; ?>" /> <?php } ?>
     <?php if ($options['scseo_tags']) 			{ ?> <meta name="keywords" content="<?php echo $keys_default; ?>, <?php if($posttags){foreach($posttags as $tag){echo $tag->name . ', ';}}; ?>" /> <?php } ?>
     <meta name="description" content="<?php echo $desc_default; ?>" />
 

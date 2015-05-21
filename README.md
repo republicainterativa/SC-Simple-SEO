@@ -3,8 +3,8 @@
 ### A very simple SEO plugin for WordPress
 
 * SEO meta tags
-* :og tags
-* robots
+* og: tags
+* meta robots
 * Google Analytics
 
 

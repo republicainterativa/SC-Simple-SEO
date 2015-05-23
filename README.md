@@ -7,7 +7,7 @@
 * meta robots
 * Google Analytics
 
-### You can download from the official WordPress plugin repository
+### Download from the WordPress plugin repository
 [SC Simple SEO](https://wordpress.org/plugins/sc-simple-seo/)
 
 ### Coming in the next update

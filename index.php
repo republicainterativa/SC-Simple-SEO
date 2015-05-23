@@ -103,10 +103,12 @@ function sc_simple_seo_options_page() {
 
 function inserthead() {
         // General Variables
-        $title_default = get_bloginfo('name');
-        $keys_default  = "'" . $options['scseo_tags'];
-        $link_default  = get_bloginfo('url');
-        $desc_default  = get_bloginfo('description');
+        $mtitle_default = get_bloginfo('name');
+        $title_default  = get_bloginfo('name');
+        $keys_default   = "'" . $options['scseo_tags'];
+        $mlink_default  = get_bloginfo('url');
+        $link_default   = get_bloginfo('url');
+        $desc_default   = get_bloginfo('description');
         // $image_default = $options['scseo_logo'];
         if (is_single() || is_page()) {
             $title_default = get_the_title($post->ID);
@@ -143,12 +145,22 @@ function inserthead() {
         }
     ?>
 
+    <!-- Opeh Graph Meta Tags -->
     <meta property="og:title" content="<?php echo $title_default; ?>"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="<?php echo $link_default; ?>"/>
     <meta property="og:image" content="<?php echo $image_default; ?>"/>
     <meta property="og:site_name" content="<?php echo $title_default; ?>"/>
-    <meta property="og:description" content="<?php echo $desc_default; ?>"/> <?php
+    <meta property="og:description" content="<?php echo $desc_default; ?>"/> 
+
+    <!-- Dublin Core Meta Tags -->
+    <!-- <meta name="dc.language" content="UK"> -->
+    <meta name="dc.source" content="<?php echo $mlink_default; ?>">
+    <meta name="dc.relation" content="<?php echo $link_default; ?>">
+    <meta name="dc.title" content="<?php echo $mtitle_default; ?>">
+    <meta name="dc.keywords" content="<?php echo $keys_default; ?>, <?php if($posttags){foreach($posttags as $tag){echo $tag->name . ', ';}}; ?>">
+    <!-- <meta name="dc.subject" content="the subject"> -->
+    <meta name="dc.description" content="<?php echo $desc_default; ?>"> <?php
 
 }
 add_action('wp_head', 'inserthead');

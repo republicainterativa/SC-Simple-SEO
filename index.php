@@ -105,7 +105,7 @@ function inserthead() {
         // General Variables
         $mtitle_default = get_bloginfo('name');
         $title_default  = get_bloginfo('name');
-        $keys_default   = "'" . $options['scseo_tags'];
+        $keys_default   = "'" . $options['scseo_tags'] . "'";
         $mlink_default  = get_bloginfo('url');
         $link_default   = get_bloginfo('url');
         $desc_default   = get_bloginfo('description');

@@ -14,6 +14,7 @@
 
 * dc. meta tags
 * geo location meta tags
+* Apple Touch Icon
 * logo upload
 
 

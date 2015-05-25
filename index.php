@@ -56,6 +56,15 @@ function scseo_settings_init() {
         'scseo_pluginPage_section' 
     );
 
+    // city and state
+    add_settings_field( 
+        'scseo_location', 
+        __( 'Insert your location', 'scseo' ), 
+        'scseo_location_render', 
+        'pluginPage', 
+        'scseo_pluginPage_section' 
+    );
+
     // coordinates
     add_settings_field( 
         'scseo_coordinates', 
@@ -93,6 +102,12 @@ function scseo_author_render() {
 function scseo_subject_render() { 
     $options = get_option( 'scseo_settings' ); ?>
     <input type='text' name='scseo_settings[scseo_subject]' value='<?php echo $options['scseo_subject']; ?>'> <?php
+}
+
+// city and state
+function scseo_location_render() { 
+    $options = get_option( 'scseo_settings' ); ?>
+    <input type='text' name='scseo_settings[scseo_location]' value='<?php echo $options['scseo_location']; ?>' placeholder="Salvador, Bahia"> <?php
 }
 
 // coordinates
@@ -193,8 +208,8 @@ function inserthead() {
     <meta name="dc.description" content="<?php echo $desc_default; ?>"> 
 
     <!-- Google Geo Location -->
-    <meta name="geo.region" content="BR-BA" />
-    <meta name="geo.placename" content="{city, state}" />
+    <!-- <meta name="geo.region" content="BR-BA" /> -->
+    <meta name="geo.placename" content="<?php if ($options['scseo_location']) { echo $options['scseo_location']; } ?>" />
     <meta name="geo.position" content="<?php if ($options['scseo_coordinates']) { echo $options['scseo_coordinates']; } ?>" />
     <meta name="ICBM" content="<?php if ($options['scseo_coordinates']) { echo $options['scseo_coordinates']; } ?>" /> <?php
 

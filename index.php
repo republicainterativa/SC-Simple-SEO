@@ -38,14 +38,23 @@ function scseo_settings_init() {
 		'scseo_pluginPage_section' 
 	);
 
-	// author
-	add_settings_field( 
-		'scseo_author', 
-		__( 'Insert authors names (separated by commas)', 'scseo' ), 
-		'scseo_author_render', 
-		'pluginPage', 
-		'scseo_pluginPage_section' 
-	);
+    // author
+    add_settings_field( 
+        'scseo_author', 
+        __( 'Insert authors names (separated by commas)', 'scseo' ), 
+        'scseo_author_render', 
+        'pluginPage', 
+        'scseo_pluginPage_section' 
+    );
+
+    // site subject
+    add_settings_field( 
+        'scseo_subject', 
+        __( 'Insert the site subject', 'scseo' ), 
+        'scseo_subject_render', 
+        'pluginPage', 
+        'scseo_pluginPage_section' 
+    );
 
 	// analytics
 	add_settings_field( 
@@ -67,8 +76,14 @@ function scseo_tags_render() {
 
 // author
 function scseo_author_render() { 
-	$options = get_option( 'scseo_settings' ); ?>
-	<input type='text' name='scseo_settings[scseo_author]' value='<?php echo $options['scseo_author']; ?>'> <?php
+    $options = get_option( 'scseo_settings' ); ?>
+    <input type='text' name='scseo_settings[scseo_author]' value='<?php echo $options['scseo_author']; ?>'> <?php
+}
+
+// subject
+function scseo_subject_render() { 
+    $options = get_option( 'scseo_settings' ); ?>
+    <input type='text' name='scseo_settings[scseo_subject]' value='<?php echo $options['scseo_subject']; ?>'> <?php
 }
 
 // analytics
@@ -159,8 +174,14 @@ function inserthead() {
     <meta name="dc.relation" content="<?php echo $link_default; ?>">
     <meta name="dc.title" content="<?php echo $mtitle_default; ?>">
     <meta name="dc.keywords" content="<?php echo $keys_default; ?>, <?php if($posttags){foreach($posttags as $tag){echo $tag->name . ', ';}}; ?>">
-    <!-- <meta name="dc.subject" content="the subject"> -->
-    <meta name="dc.description" content="<?php echo $desc_default; ?>"> <?php
+    <meta name="dc.subject" content="<?php if ($options['scseo_subject']) { echo $options['scseo_subject']; } ?>">
+    <meta name="dc.description" content="<?php echo $desc_default; ?>"> 
+
+    <!-- Google Geo Location -->
+    <meta name="geo.region" content="BR-BA" />
+    <meta name="geo.placename" content="{city, state}" />
+    <meta name="geo.position" content="{coordinates}" />
+    <meta name="ICBM" content="{coordinates}" /> <?php
 
 }
 add_action('wp_head', 'inserthead');

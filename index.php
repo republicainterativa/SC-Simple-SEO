@@ -56,6 +56,15 @@ function scseo_settings_init() {
         'scseo_pluginPage_section' 
     );
 
+    // coordinates
+    add_settings_field( 
+        'scseo_coordinates', 
+        __( 'Insert the coordinates (Google Maps)', 'scseo' ), 
+        'scseo_coordinates_render', 
+        'pluginPage', 
+        'scseo_pluginPage_section' 
+    );
+
 	// analytics
 	add_settings_field( 
 		'scseo_analytics', 
@@ -84,6 +93,12 @@ function scseo_author_render() {
 function scseo_subject_render() { 
     $options = get_option( 'scseo_settings' ); ?>
     <input type='text' name='scseo_settings[scseo_subject]' value='<?php echo $options['scseo_subject']; ?>'> <?php
+}
+
+// subject
+function scseo_coordinates_render() { 
+    $options = get_option( 'scseo_settings' ); ?>
+    <input type='text' name='scseo_settings[scseo_coordinates]' value='<?php echo $options['scseo_coordinates']; ?>'> <?php
 }
 
 // analytics
@@ -180,8 +195,8 @@ function inserthead() {
     <!-- Google Geo Location -->
     <meta name="geo.region" content="BR-BA" />
     <meta name="geo.placename" content="{city, state}" />
-    <meta name="geo.position" content="{coordinates}" />
-    <meta name="ICBM" content="{coordinates}" /> <?php
+    <meta name="geo.position" content="<?php if ($options['scseo_coordinates']) { echo $options['scseo_coordinates']; } ?>" />
+    <meta name="ICBM" content="<?php if ($options['scseo_coordinates']) { echo $options['scseo_coordinates']; } ?>" /> <?php
 
 }
 add_action('wp_head', 'inserthead');

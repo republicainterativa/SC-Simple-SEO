@@ -95,10 +95,10 @@ function scseo_subject_render() {
     <input type='text' name='scseo_settings[scseo_subject]' value='<?php echo $options['scseo_subject']; ?>'> <?php
 }
 
-// subject
+// coordinates
 function scseo_coordinates_render() { 
     $options = get_option( 'scseo_settings' ); ?>
-    <input type='text' name='scseo_settings[scseo_coordinates]' value='<?php echo $options['scseo_coordinates']; ?>'> <?php
+    <input type='text' name='scseo_settings[scseo_coordinates]' value='<?php echo $options['scseo_coordinates']; ?>' placeholder="-13.000671, -38.452555"> <?php
 }
 
 // analytics

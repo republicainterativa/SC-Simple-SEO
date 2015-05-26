@@ -12,8 +12,8 @@
 
 ### Coming in the next update
 
-* dc. meta tags
-* geo location meta tags
+* dc. meta tags (almost done)
+* geo location meta tags (almost done)
 * Apple Touch Icon
 * logo upload
 

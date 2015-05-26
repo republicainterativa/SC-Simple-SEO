@@ -20,13 +20,13 @@ function scseo_add_admin_menu() {
 
 function scseo_settings_init() { 
 
-	register_setting( 'pluginPage', 'scseo_settings' );
+	register_setting( 'scSimpleSEO', 'scseo_settings' );
 
 	add_settings_section(
-		'scseo_pluginPage_section', 
+		'scseo_scSimpleSEO_section', 
 		__( 'SC Simple SEO', 'scseo' ), 
 		'scseo_settings_section_callback', 
-		'pluginPage'
+		'scSimpleSEO'
 	);
 
 	// tags
@@ -34,8 +34,8 @@ function scseo_settings_init() {
 		'scseo_tags', 
 		__( 'Insert tags associated to the site subject (separated by commas)', 'scseo' ), 
 		'scseo_tags_render', 
-		'pluginPage', 
-		'scseo_pluginPage_section' 
+		'scSimpleSEO', 
+		'scseo_scSimpleSEO_section' 
 	);
 
     // author
@@ -43,8 +43,8 @@ function scseo_settings_init() {
         'scseo_author', 
         __( 'Insert authors names (separated by commas)', 'scseo' ), 
         'scseo_author_render', 
-        'pluginPage', 
-        'scseo_pluginPage_section' 
+        'scSimpleSEO', 
+        'scseo_scSimpleSEO_section' 
     );
 
     // site subject
@@ -52,8 +52,8 @@ function scseo_settings_init() {
         'scseo_subject', 
         __( 'Insert the site subject', 'scseo' ), 
         'scseo_subject_render', 
-        'pluginPage', 
-        'scseo_pluginPage_section' 
+        'scSimpleSEO', 
+        'scseo_scSimpleSEO_section' 
     );
 
     // city and state
@@ -61,8 +61,8 @@ function scseo_settings_init() {
         'scseo_location', 
         __( 'Insert your location', 'scseo' ), 
         'scseo_location_render', 
-        'pluginPage', 
-        'scseo_pluginPage_section' 
+        'scSimpleSEO', 
+        'scseo_scSimpleSEO_section' 
     );
 
     // coordinates
@@ -70,8 +70,8 @@ function scseo_settings_init() {
         'scseo_coordinates', 
         __( 'Insert the coordinates (Google Maps)', 'scseo' ), 
         'scseo_coordinates_render', 
-        'pluginPage', 
-        'scseo_pluginPage_section' 
+        'scSimpleSEO', 
+        'scseo_scSimpleSEO_section' 
     );
 
 	// analytics
@@ -79,8 +79,8 @@ function scseo_settings_init() {
 		'scseo_analytics', 
 		__( 'Insert the ID of your Google Analytics', 'scseo' ), 
 		'scseo_analytics_render', 
-		'pluginPage', 
-		'scseo_pluginPage_section' 
+		'scSimpleSEO', 
+		'scseo_scSimpleSEO_section' 
 	);
 
 
@@ -124,29 +124,25 @@ function scseo_analytics_render() {
 
 
 function scseo_settings_section_callback() { 
-
 	echo __( 'Insert the required information for a better SEO', 'scseo' );
-
 }
 
 
-function sc_simple_seo_options_page() { 
-
-	?>
+function sc_simple_seo_options_page() { ?>
 	<form action='options.php' method='post'>
 		
 		<?php
-		settings_fields( 'pluginPage' );
-		do_settings_sections( 'pluginPage' );
+		settings_fields( 'scSimpleSEO' );
+		do_settings_sections( 'scSimpleSEO' );
 		submit_button();
 		?>
 		
-	</form>
-	<?php
-
+	</form> <?php
 }
 
 function inserthead() {
+        $options = get_option( 'scseo_settings' );
+
         // General Variables
         $mtitle_default = get_bloginfo('name');
         $title_default  = get_bloginfo('name');
@@ -204,14 +200,14 @@ function inserthead() {
     <meta name="dc.relation" content="<?php echo $link_default; ?>">
     <meta name="dc.title" content="<?php echo $mtitle_default; ?>">
     <meta name="dc.keywords" content="<?php echo $keys_default; ?>, <?php if($posttags){foreach($posttags as $tag){echo $tag->name . ', ';}}; ?>">
-    <meta name="dc.subject" content="<?php if ($options['scseo_subject']) { echo $options['scseo_subject']; } ?>">
+    <meta name="dc.subject" content="<?php echo $options['scseo_subject']; ?>">
     <meta name="dc.description" content="<?php echo $desc_default; ?>"> 
 
     <!-- Google Geo Location -->
     <!-- <meta name="geo.region" content="BR-BA" /> -->
-    <meta name="geo.placename" content="<?php if ($options['scseo_location']) { echo $options['scseo_location']; } ?>" />
-    <meta name="geo.position" content="<?php if ($options['scseo_coordinates']) { echo $options['scseo_coordinates']; } ?>" />
-    <meta name="ICBM" content="<?php if ($options['scseo_coordinates']) { echo $options['scseo_coordinates']; } ?>" /> <?php
+    <meta name="geo.placename" content="<?php echo $options['scseo_location']; ?>" />
+    <meta name="geo.position" content="<?php echo $options['scseo_coordinates']; ?>" />
+    <meta name="ICBM" content="<?php echo $options['scseo_coordinates']; ?>" /> <?php
 
 }
 add_action('wp_head', 'inserthead');

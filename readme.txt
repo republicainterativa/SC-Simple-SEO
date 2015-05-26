@@ -19,43 +19,35 @@ The plugin injects:
 
 
 *	Variables
-
 	- 	Title
-
 	- 	Description
-
 	- 	URL
-
 	- 	Tags
-
 *	Meta tags
-
 	-	Author
-
 	-	Keywords
-
 	-	Description
-
 	-	Copyright
-
 	-	Robots (for any hierarchical file)
-
 *	og: tags
-
 	-	Title
-
 	-	Type
-
 	-	URL
-
 	-	Image
-
 	-	Site Name
-
 	-	Description
-
+*	dc. tags
+	-	Source
+	-	Relation
+	-	Title
+	-	Keywords
+	-	Subject
+	-	Description
+*	geo location tags
+	-	Placename
+	-	Position
+	-	ICBM
 *	Google Analytics code
-
 
 New features are coming soon!!!
 
@@ -80,6 +72,11 @@ You can chech your analytics, check your code into the <head> or search for the 
 
 = 1.0 =
 * Plugin created
+
+= 1.1 =
+* Geo Location almost done
+* dc. almost done
+* minnor bugs fixed
 
 == Upgrade Notice ==
 

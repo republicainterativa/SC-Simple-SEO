@@ -1,6 +1,6 @@
 === SC Simple SEO ===
 Contributors: sergiuscosta
-Donate link: http://www.sergiocosta.net.br/
+Donate link: http://www.republicainterativa.com.br/
 Tags: seo, search engine optimization, google, search, analytics, opengraph, open graph, robots, meta tags
 Requires at least: 3.2
 Tested up to: 4.2.2

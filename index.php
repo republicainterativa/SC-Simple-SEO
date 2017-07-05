@@ -5,7 +5,7 @@
  * Description: A very simple SEO plugin
  * Version: 1.1.1
  * Author: Sergio Costa
- * Author URI: http://sergiocosta.net.br/
+ * Author URI: http://republicainterativa.com.br/
  * Text Domain: scseo
  * License: GPLv2 or later
  */

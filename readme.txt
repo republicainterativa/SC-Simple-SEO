@@ -3,8 +3,8 @@ Contributors: sergiuscosta
 Donate link: http://www.republicainterativa.com.br/
 Tags: seo, search engine optimization, google, search, analytics, opengraph, open graph, robots, meta tags
 Requires at least: 3.2
-Tested up to: 4.2.2
-Stable tag: 4.3
+Tested up to: 4.8
+Stable tag: 4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,18 +70,23 @@ You can chech your analytics, check your code into the <head> or search for the 
 
 == Changelog ==
 
-= 1.0 =
-* Plugin created
+= 2.0 =
+* Geo location meta tags
+* DC meta tags
+* Minor code fixes
+
+= 1.1.1 =
+* minnor bug fixed in analytics code
 
 = 1.1 =
 * Geo Location almost done
 * dc. almost done
 * minnor bugs fixed
 
-= 1.1.1 =
-* minnor bug fixed in analytics code
+= 1.0 =
+* Plugin created
 
 == Upgrade Notice ==
 
-= 1.0 =
-* Plugin created
+= 3.0 =
+* soon

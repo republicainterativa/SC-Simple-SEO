@@ -3,7 +3,7 @@
  * Plugin Name: SC Simple SEO
  * Plugin URI: https://profiles.wordpress.org/sergiuscosta
  * Description: A very simple SEO plugin
- * Version: 2.0
+ * Version: 2.1
  * Author: Sergio Costa
  * Author URI: http://republicainterativa.com.br/
  * Text Domain: scseo

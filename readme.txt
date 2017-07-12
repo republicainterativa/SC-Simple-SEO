@@ -70,6 +70,9 @@ You can chech your analytics, check your code into the <head> or search for the 
 
 == Changelog ==
 
+= 2.1 =
+* Responsive options page
+
 = 2.0 =
 * Geo location meta tags
 * DC meta tags

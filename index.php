@@ -17,8 +17,8 @@ require_once 'functions/google.php';
 
 add_action( 'admin_enqueue_scripts', 'sc_seo_assets' );
 function sc_seo_assets($hook) {
-    wp_register_style('sc_seo_style', plugins_url('css/sc-seo-style.css',__FILE__));
-    wp_enqueue_style('sc_seo_style');
+    wp_register_style('sc_seo_bootstrap', plugins_url('css/sc-seo-bootstrap.css',__FILE__));
+    wp_enqueue_style('sc_seo_bootstrap');
 }
 
 ?>
